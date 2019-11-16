@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=System Information
+Comment=
+Icon=me.Appadeia.systeminformation
+Exec=me.Appadeia.systeminformation
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;
+Keywords=app;vala;

@@ -1,0 +1,7 @@
+build/*
+debian/build/*
+debian/me.Appadeia.systeminformation.debhelper.log
+debian/me.Appadeia.systeminformation.substvars
+debian/me.Appadeia.systeminformation/
+debian/debhelper-build-stamp
+debian/files
