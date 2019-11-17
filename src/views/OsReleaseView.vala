@@ -67,6 +67,14 @@ namespace SystemInformation.Views {
             yield;
         }
 
+        protected string get_output(string cmd) {
+            string stdout = null;
+
+            Process.spawn_command_line_sync(cmd, out stdout);
+
+            return stdout.strip();
+        }
+
         public OsReleaseView() {
             this.parse_os_release();
 
@@ -104,6 +112,35 @@ namespace SystemInformation.Views {
                 }
                 { // Similar ID
                     var row = new DataRow("Similar IDs", os_release["ID_LIKE"], true, true, " ");
+                    dbox.add(row);
+                }
+                box.add(label);
+                box.add(dbox);
+            }
+
+            {
+                var label = new Gtk.Label("Kernel Information");
+                label.get_style_context().add_class("title-4");
+                label.xalign = -1;
+    
+                var dbox = new Gtk.ListBox();
+                dbox.selection_mode = Gtk.SelectionMode.NONE;
+                dbox.get_style_context().add_class("frame");
+    
+                { // Kernel Name
+                    var row = new DataRow("Kernel Name", get_output("uname -s"));
+                    dbox.add(row);
+                }
+                { // Kernel Release
+                    var row = new DataRow("Kernel Release", get_output("uname -r"));
+                    dbox.add(row);
+                }
+                { // Kernel Version
+                    var row = new DataRow("Kernel Version", get_output("uname -v"));
+                    dbox.add(row);
+                }
+                { // Operating System
+                    var row = new DataRow("Operating System", get_output("uname -o"));
                     dbox.add(row);
                 }
                 box.add(label);

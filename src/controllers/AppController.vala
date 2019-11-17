@@ -164,6 +164,37 @@ namespace SystemInformation.Controllers {
                 this.app_stack.add_titled(new SimpleView(), "simple-view", "Basic Information");
                 this.app_stack.add_titled(new ProcessorView(), "proc-view", "Processors");
                 this.app_stack.add_titled(new OsReleaseView(), "os-view", "Operating System");
+                this.app_stack.add_titled(new DisplayView(), "disp-view", "Displays");
+            }
+            { // Actions
+                var about_action = new SimpleAction ("about", null);
+                about_action.activate.connect(() => {
+                    // Configure the dialog:
+                    Gtk.AboutDialog dialog = new Gtk.AboutDialog ();
+                    dialog.set_destroy_with_parent (true);
+                    dialog.set_transient_for(this.window);
+                    dialog.set_modal (true);
+                    
+                    dialog.artists = {"Carson Black"};
+                    dialog.authors = {"Carson Black"};
+                    dialog.documenters = null; // Real inventors don't document.
+                    dialog.translator_credits = null; // We only need a scottish version.
+    
+                    dialog.program_name = "System Information";
+                    dialog.comments = "Information about your system.";
+                    dialog.copyright = "Copyright © 2019\tCarson Black";
+
+                    dialog.logo_icon_name = "me.Appadeia.systeminformation";
+                    dialog.license_type = Gtk.License.GPL_3_0_ONLY;
+
+                    dialog.response.connect ((response_id) => {
+                        if (response_id == Gtk.ResponseType.CANCEL || response_id == Gtk.ResponseType.DELETE_EVENT) {
+                            dialog.hide_on_delete ();
+                        }
+                    });
+                    dialog.show();
+                });
+                application.add_action(about_action);
             }
             
             this.hb_container = new Hdy.TitleBar();

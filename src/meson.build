@@ -8,6 +8,7 @@ sources += files(
     'views/SimpleView.vala',
     'views/ProcessorView.vala',
     'views/OsReleaseView.vala',
+    'views/DisplayView.vala',
 
     'widgets/DataRow.vala',
 

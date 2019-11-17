@@ -5,6 +5,7 @@ namespace SystemInformation.Widgets {
             label.wrap_mode = Pango.WrapMode.WORD_CHAR;
             label.max_width_chars = 30;
             label.wrap = true;
+            this.width_request = 400;
 
             if (!expander) {
                 var row = new Hdy.ActionRow();
