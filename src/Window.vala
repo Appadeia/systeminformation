@@ -37,6 +37,7 @@ namespace SystemInformation {
          * @see style_provider
          * @see build
          */
+
         public Window (Gtk.Application app) {
             Object (
                 application: app,
@@ -44,8 +45,6 @@ namespace SystemInformation {
                 title: "System Information",
                 resizable: true
             );
-
-            
 
             var css_provider = new Gtk.CssProvider ();
             css_provider.load_from_resource (Constants.URL_CSS);

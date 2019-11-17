@@ -7,11 +7,5 @@
 
     <gresource prefix="/me/Appadeia/systeminformation/images">
         <file alias="me.Appadeia.systeminformation.svg" compressed="true" preprocess="xml-stripblanks">images/me.Appadeia.systeminformation.svg</file>
-        <file alias="16-me.Appadeia.systeminformation.svg" compressed="true" preprocess="xml-stripblanks">images/icons/16/me.Appadeia.systeminformation.svg</file>
-        <file alias="24-me.Appadeia.systeminformation.svg" compressed="true" preprocess="xml-stripblanks">images/icons/24/me.Appadeia.systeminformation.svg</file>
-        <file alias="32-me.Appadeia.systeminformation.svg" compressed="true" preprocess="xml-stripblanks">images/icons/32/me.Appadeia.systeminformation.svg</file>
-        <file alias="48-me.Appadeia.systeminformation.svg" compressed="true" preprocess="xml-stripblanks">images/icons/48/me.Appadeia.systeminformation.svg</file>
-        <file alias="64-me.Appadeia.systeminformation.svg" compressed="true" preprocess="xml-stripblanks">images/icons/64/me.Appadeia.systeminformation.svg</file>
-        <file alias="128-me.Appadeia.systeminformation.svg" compressed="true" preprocess="xml-stripblanks">images/icons/128/me.Appadeia.systeminformation.svg</file>
     </gresource>
 </gresources>

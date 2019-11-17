@@ -24,7 +24,7 @@ namespace SystemInformation.Views {
      *
      * @since 1.0.0
      */
-    public class AppView : Gtk.Box {
+    public class AppView : Gtk.Stack {
 
         /**
          * Constructs a new {@code AppView} object.
