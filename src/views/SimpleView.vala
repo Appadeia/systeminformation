@@ -161,10 +161,20 @@ namespace SystemInformation.Views {
                 }
                 { // Graphics
                     var row = new Hdy.ActionRow();
-                    row.set_title("Graphics");
+                    row.set_title("Graphics Card");
 
 
-                    var label = new Gtk.Label(get_output("neofetch gpu").split(":")[1].strip());
+                    var label = new Gtk.Label(get_output("sh -c \"glxinfo | egrep -i 'device'\"").split(":")[1].strip().split("(")[0]);
+                    row.add_action(label);
+
+                    dbox.add(row);
+                }
+                { // Graphics
+                    var row = new Hdy.ActionRow();
+                    row.set_title("Video Memory");
+
+
+                    var label = new Gtk.Label(get_output("sh -c \"glxinfo | egrep 'Video memory:'\"").split(":")[1].strip());
                     row.add_action(label);
 
                     dbox.add(row);
